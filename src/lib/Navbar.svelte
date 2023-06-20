@@ -1,0 +1,3 @@
+<h1>SPARC '28 <span style="font-size:24px"><br><i>Official Website</i></span></h1>
+<div class="topleft"><img src="https://sparc28.mathematicalcoder.repl.co/assets/sparc28logo-2.png" height="100"></div>
+<p style="text-align:center; color:#ebc034"><b><a href="https://sparc28.mathematicalcoder.repl.co/">Home</a> | <a href="https://sparc28.mathematicalcoder.repl.co/test/index.php">Practice Tests</a> | <a href="https://sparc28.mathematicalcoder.repl.co/404.php">Click Me!</a></b></p>

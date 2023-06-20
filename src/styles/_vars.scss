@@ -1,3 +1,16 @@
-$bg-primary: #18100C;
-$bg-secondary: #D7C49A;
-$bg-tertiary: #3C2B27;
+@use "sass:color";
+
+$bg-primary: color.adjust(#3C1518, $lightness: -10%);
+$bg-secondary: #D58936;
+
+$surface-primary: #A44200;
+$surface-secondary: color.adjust(#69140E, $lightness: -10%);
+
+$text-primary: #FFF;
+$text-highlight: #F2F3AE;
+
+$layer-1: #FB8B24;
+$layer-2: #E36414;
+$layer-3: #9A031E;
+$layer-4: #5f0f40;
+$layer-5: #0F4C5C;
