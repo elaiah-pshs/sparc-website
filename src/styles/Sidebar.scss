@@ -1,0 +1,24 @@
+@use "vars";
+
+.sidebar {
+    position: fixed;
+    top: 3rem;
+    z-index: 9;
+
+    width: 12rem;
+    height: calc(100vh - 6rem);
+    border-radius: 0 0.25rem 0.25rem 0;
+
+    background-color: vars.$layer-1;
+
+    transform: translateX(-100%);
+    transition: vars.$transition-medium;
+}
+
+.sidebar:hover, .sidebar.toggled {
+    transform: translateX(0%);
+}
+
+li {
+    list-style: none;
+}

@@ -1,5 +1,5 @@
 <script>
-    import '../styles/root.scss';
+    import '../../styles/root.scss';
 </script>
 
 <h1>Reviewers</h1>

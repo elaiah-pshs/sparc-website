@@ -19,9 +19,9 @@
     <title>Home</title>
 </svelte:head>
 
-<main>
+<!-- <main>
     {@html display}
-</main>
+</main> -->
 
 <!--
 This script places a badge on your repl's full-browser view back to your repl's cover

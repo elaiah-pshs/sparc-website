@@ -1,43 +1,55 @@
 @use "vars";
 
-.navbar-icon {
-    position: fixed;
-    z-index: 10;
-
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0.75rem;
-}
-
-.navbar-icon:hover + .navbar, .navbar:hover {
-    transform: translateX(0%);
-}
-
 .navbar {
     position: fixed;
-    top: 3rem;
-    z-index: 9;
+    right: 0;
 
-    width: 12rem;
-    height: calc(100vh - 6rem);
-    border-radius: 0 0.25rem 0.25rem 0;
+    width: 100%;
+    height: 3rem;
 
-    background-color: vars.$layer-1;
-
-    transform: translateX(-100%);
     transition: vars.$transition-medium;
 }
 
-.navbar-icon:hover + .navbar, .navbar:hover {
-    transform: translateX(0%);
-}
+.navbar-items {
+    height: 100%;
 
-ul {
     margin: 0;
+    padding: 0 0.75rem 0 0;
+
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    column-gap: 1.5rem;
+
+    list-style: none;
 }
 
-li {
-    list-style: none;
+.navbar-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item:nth-child(2) {
+    margin-right: auto;
+}
+
+.navbar-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.sidebar-toggle {
+    padding: 0 0.75rem;
+}
+
+.navbar-divider {
+    width: 1px;
+    height: 1.5rem;
+    background-color: #FFF8;
 }
