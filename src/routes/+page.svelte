@@ -1,6 +1,21 @@
 <script>
+    import { onMount } from 'svelte';
     import '../styles/root.scss';
+
+    let display = "";
+
+    onMount(() => {
+        fetch("./test.html")
+            .then((res) => res.text())
+            .then((text) => {
+                display = text;
+                console.log(text);
+            })
+            .catch((e) => console.error(e));
+    });
 </script>
+
+<p>{@html display}</p>
 
 <!--
 This script places a badge on your repl's full-browser view back to your repl's cover
