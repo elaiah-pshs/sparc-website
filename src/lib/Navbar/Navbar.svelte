@@ -1,10 +1,12 @@
 <script>
-    import '../../styles/Navbar/Navbar.scss';
+    import '../../styles/Navbar.scss';
 </script>
 
-<nav>
-    <ul>
-        <li class="icon">SPARC 2028 (icon)</li>
+<img class="navbar-icon" src="icons/navbar.svg" alt="open navbar">
+
+<nav class="navbar">
+    <ul class="sidebar">
+        <li class="logo">SPARC 2028 (icon)</li>
         
         <li class="item">Announcements</li>
         <li class="item">Progress</li>

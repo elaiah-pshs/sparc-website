@@ -30,7 +30,7 @@ body {
 }
 
 main {
-    padding: 0rem 2rem 1rem 2rem;
+    padding: 0rem 2rem 1rem 4rem;
 }
 
 h1, h2, h3 {
@@ -48,7 +48,7 @@ a {
 }
 
 a:hover, a:active {
-    color: vars.$bg-secondary;
+    color: vars.$text-highlight;
     text-decoration: none;
 }
 

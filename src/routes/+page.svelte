@@ -5,7 +5,7 @@
     let display = "";
 
     onMount(() => {
-        fetch("./test.html")
+        fetch("./templates/test.html")
             .then((res) => res.text())
             .then((text) => {
                 display = text;
@@ -15,7 +15,13 @@
     });
 </script>
 
-<p>{@html display}</p>
+<svelte:head>
+    <title>Home</title>
+</svelte:head>
+
+<main>
+    {@html display}
+</main>
 
 <!--
 This script places a badge on your repl's full-browser view back to your repl's cover
