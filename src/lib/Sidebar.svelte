@@ -1,5 +1,5 @@
 <script>
-    import '../../styles/Sidebar.scss';
+    import '../styles/Sidebar.scss';
 </script>
 
 <aside class="sidebar">

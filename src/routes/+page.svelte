@@ -9,7 +9,6 @@
             .then((res) => res.text())
             .then((text) => {
                 display = text;
-                console.log(text);
             })
             .catch((e) => console.error(e));
     });

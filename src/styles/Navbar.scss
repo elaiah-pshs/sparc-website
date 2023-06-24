@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "vars";
 
 .navbar {
@@ -14,23 +15,33 @@
     height: 100%;
 
     margin: 0;
-    padding: 0 0.75rem 0 0;
+    padding: 0;
 
     display: flex;
     align-items: center;
-    column-gap: 1.5rem;
 
     list-style: none;
 }
 
 .navbar-item {
-    height: 100%;
+    border-radius: 2px;
+    padding: 0.25rem;
+    margin: 0 0.5rem;
+
     display: flex;
     align-items: center;
+
+    transition: vars.$transition-medium;
 }
 
-.navbar-item:nth-child(2) {
+.navbar-item:hover {
+    background-color: #FFF2;
+}
+
+.navbar-path {
+    margin-left: 0.75rem;
     margin-right: auto;
+    display: flex;
 }
 
 .navbar-link {
@@ -44,12 +55,37 @@
     height: 1.5rem;
 }
 
-.sidebar-toggle {
-    padding: 0 0.75rem;
+.navbar-path-link {
+    border-radius: 2px;
+    padding: 0.25rem;
+    display: block;
+    font-family: "Roboto Mono", "Courier New", monospace;
+}
+
+.navbar-path-link:hover {
+    color: vars.$text-highlight;
+    background-color: #FFF2;
+}
+
+.navbar-path-divider {
+    padding: 0.25rem;
+    color: #FFF8;
+}
+
+.navbar-path-contraction {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-path-tooltip {
+    position: absolute;
+    border-radius: 2px;
+    background-color: vars.$surface-primary;
 }
 
 .navbar-divider {
     width: 1px;
     height: 1.5rem;
+    margin: 0.75rem;
     background-color: #FFF8;
 }
