@@ -4,7 +4,11 @@
 
 <aside class="sidebar">
     <ul class="sidebar-items">
-        <li class="sidebar-logo">SPARC 2028 (icon)</li>
+        <li class="sidebar-item">
+            <a href="./" class="sidebar-link">
+                <img class="sidebar-logo" src="logo.png" alt="SPARC 2028 Logo">
+            </a>
+        </li>
         
         <li class="sidebar-item">Announcements</li>
         <li class="sidebar-item">Progress</li>

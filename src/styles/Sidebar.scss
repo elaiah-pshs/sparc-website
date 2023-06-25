@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "vars";
 
 .sidebar {
@@ -9,7 +10,8 @@
     height: calc(100vh - 6rem);
     border-radius: 0 0.25rem 0.25rem 0;
 
-    background-color: vars.$layer-1;
+    background: linear-gradient(45deg + 180deg, vars.$layer-4, vars.$layer-1);
+    // background-color: vars.$layer-4;
 
     transform: translateX(-100%);
     transition: vars.$transition-medium;
@@ -19,6 +21,12 @@
     transform: translateX(0%);
 }
 
-li {
+.sidebar-items {
+    padding: 1rem 3rem 1rem 1rem;
+    margin: 0;
     list-style: none;
+}
+
+.sidebar-logo {
+    width: 100%;
 }
