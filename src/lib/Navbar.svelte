@@ -9,7 +9,8 @@
     let dropdown_visible = false;
     const links = [`<a class="navbar-path-link" href="./">home</a>`];
 
-    path_raw = "/reviewers/q1/mqe/math/coordinates";
+    // test path
+    // path_raw = "/reviewers/q1/mqe/math/coordinates";
 
     path_raw.split('/').filter((str) => str !== '').forEach(element => {
         current_path += ('/' + element);
