@@ -1,6 +1,5 @@
 <script>
-    import Navbar from '$lib/Navbar.svelte';
-    import Sidebar from '$lib/Sidebar.svelte';
+    import NavbarPath from '$lib/NavbarPath.svelte';
     import '../styles/root.scss';
 </script>
 
@@ -8,9 +7,7 @@
     <title>Home</title>
 </svelte:head>
 
-<!-- move these to Headers.svelte when you make that component -->
-<Navbar />
-<Sidebar />
+<NavbarPath />
 
 <main>
     <h1>Home</h1>
