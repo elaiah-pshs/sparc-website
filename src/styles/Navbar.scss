@@ -24,9 +24,16 @@
 }
 
 .navbar-item {
+    height: 100%;
+    padding: 0 0.5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
     border-radius: 2px;
     padding: 0.25rem;
-    margin: 0 0.5rem;
 
     display: flex;
     align-items: center;
@@ -34,14 +41,9 @@
     transition: vars.$transition-medium;
 }
 
-.navbar-item:hover {
+.navbar-item:hover .navbar-link {
     background-color: #FFF2;
-}
-
-.navbar-link {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    color: vars.$text-highlight;
 }
 
 .navbar-icon {
@@ -56,31 +58,13 @@
     background-color: #FFF8;
 }
 
-.sidebar-toggler {
-    width: 3rem;
+.navbar-path {
     height: 100%;
+
+    margin: 0 auto 0 0.75rem;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.sidebar-toggler-icon {
-    @extend .navbar-icon;
-    
-    border-radius: 2px;
-    padding: 0.25rem;
-    transition: vars.$transition-medium;
-}
-
-.sidebar-toggler:hover .sidebar-toggler-icon {
-    background-color: #FFF2;
-}
-
-.navbar-path {
-    margin-left: 0.75rem;
-    margin-right: auto;
-    display: flex;
 }
 
 .navbar-path-link {

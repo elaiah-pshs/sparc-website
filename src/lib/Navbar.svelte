@@ -43,8 +43,8 @@
 
 <nav class="navbar">
     <ul class="navbar-items">
-        <li on:mouseover={toggleSidebar} on:focus={toggleSidebar} on:mouseout={hideSidebar} on:blur={hideSidebar} class="sidebar-toggler">
-            <img class="sidebar-toggler-icon" src="icons/sidebar.svg" alt="Open sidebar">
+        <li on:mouseover={toggleSidebar} on:focus={toggleSidebar} on:mouseout={hideSidebar} on:blur={hideSidebar} class="navbar-item">
+            <img class="navbar-link navbar-icon" src="icons/sidebar.svg" alt="Open sidebar">
         </li>
         <li class="navbar-path">
             {#if links.length <= 4}
