@@ -1,11 +1,10 @@
 <script>
-    import NavbarPath from '$lib/NavbarPath.svelte';
-    import '../../styles/root.scss';
+    import Topbar from '$lib/Topbar.svelte';
 </script>
 
-<NavbarPath />
+<Topbar />
 
 <main>
-    <h1>Reviewers</h1>
+    <h1>Report an Error</h1>
     <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </main>

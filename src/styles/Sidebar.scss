@@ -3,30 +3,112 @@
 
 .sidebar {
     position: fixed;
-    top: 3rem;
-    z-index: 1;
+    z-index: 8;
 
-    width: 12rem;
+    width: 16rem;
     height: calc(100vh - 6rem);
     border-radius: 0 0.25rem 0.25rem 0;
 
     background: linear-gradient(45deg + 180deg, vars.$layer-4, vars.$layer-1);
-    // background-color: vars.$layer-4;
 
-    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    translate: -100% 3rem;
     transition: vars.$transition-medium;
 }
 
 .sidebar:hover, .sidebar.toggled {
-    transform: translateX(0%);
+    translate: 0 3rem;
 }
 
-.sidebar-items {
-    padding: 1rem 3rem 1rem 1rem;
+.sidebar-header {
+    width: 100%;
+    height: 3rem;
+    border-top-right-radius: 0.25rem;
+
     margin: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+    transition: vars.$transition-medium;
+}
+
+.sidebar-header-link {
+    height: 100%;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.sidebar-header-text {
+    font-weight: 700;
+}
+
+.sidebar-header-icon {
+    height: 2rem;
+}
+
+.sidebar-links {
+    width: 100%;
+
+    margin: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+
     list-style: none;
 }
 
-.sidebar-logo {
+.sidebar-item {
+    height: 1rem;
+    padding: 0.25rem 0.5rem;
+    transition: vars.$transition-medium;
+}
+
+.sidebar-item:first-child {
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.sidebar-item:last-child {
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.sidebar-link {
     width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.sidebar-icon {
+    height: 100%;
+}
+
+.sidebar-text {
+    font-family: "Roboto Mono", "Courier New", monospace;
+    font-size: (7/8) * 1rem;
+    font-weight: 400;
+}
+
+.sidebar-item:hover, .sidebar-header:hover {
+    background-color: #FFF2;
+}
+
+.sidebar-dropdowns {
+    width: 100%;
+
+    margin: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+    overflow: auto;
 }
