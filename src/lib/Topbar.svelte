@@ -42,7 +42,7 @@
     }
 </script>
 
-<nav class="topbar">
+<div class="topbar">
     <ul class="topbar-items">
         <li on:mouseover={toggleSidebar} on:focus={toggleSidebar} on:mouseout={hideSidebar} on:blur={hideSidebar} class="topbar-item">
             <img class="topbar-link topbar-icon" src="icons/sidebar.svg" alt="Open sidebar">
@@ -87,4 +87,4 @@
             <NavLink location="topbar" href="./report" src="icons/placeholder.svg" alt="Report an Issue" text={false} />
         </li>
     </ul>
-</nav>
+</div>
