@@ -59,12 +59,23 @@
     }
 
     function expandSidebarKey(e) {
-        let sidebar = document.querySelector(".sidebar");
         if(e.key == "Enter") {
-            if (sidebar.classList.contains("expanded"))
-                sidebar.classList.remove("expanded")
-            else
+            let sidebar = document.querySelector(".sidebar");
+            let main = document.querySelector("main");
+
+            if (sidebar.classList.contains("expanded")) {
+                expander.style.transition = "none";
+                expander.style.rotate = "0deg";
+                sidebar.classList.remove("expanded");
+                topbar.style.width = "100%";
+                main.style.padding = "4rem 3rem 1rem 3rem";
+            }
+            else {
+                expander.style.rotate = "180deg";
+                topbar.style.width = "calc(100% - 13rem)";
+                main.style.padding = "4rem 3rem 1rem 19rem";
                 sidebar.classList.add("expanded");
+            }
         }
     }
 
