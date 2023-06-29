@@ -22,9 +22,7 @@
     {@html display}
 </main> -->
 
-<!--
-This script places a badge on your repl's full-browser view back to your repl's cover
-page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-teal, blue, blurple, magenta, pink!
-<script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
--->
+<main>
+	<h1>Welcome to SPARC 2028!</h1>
+	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+</main>
