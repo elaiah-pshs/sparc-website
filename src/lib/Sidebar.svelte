@@ -1,6 +1,16 @@
 <script>
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Sidebar.scss';
+
+    let dropdowns;
+    
+    function handleScroll() {
+        let links = document.querySelector(".sidebar-links");
+        if (dropdowns.scrollTop == 0)
+            links.style.borderBottom = "2px solid #FFF0";
+        else
+            links.style.borderBottom = "2px solid #FFF2";
+    }
 </script>
 
 <aside class="sidebar toggled">
@@ -20,7 +30,7 @@
         </li>        
     </ul>
 
-    <ul class="sidebar-dropdowns">
+    <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>
         <li class="sidebar-item">placeholder</li>
         <li class="sidebar-item">placeholder</li>
         <li class="sidebar-item">placeholder</li>
