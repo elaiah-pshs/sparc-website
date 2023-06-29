@@ -33,27 +33,27 @@
     function hideSidebar() {
         let sidebar = document.querySelector(".sidebar");
 
-        if (!sidebar.classList.contains("expanded")) {
-            // if (expander.style.rotate == "180deg")
-            //     expander.style.rotate = "0deg";
-            
+        if (!sidebar.classList.contains("expanded"))
             expander.src = "icons/sidebar.svg";
-        }
 
         sidebar.classList.remove("toggled");
     }
 
     function expandSidebarClick() {
         let sidebar = document.querySelector(".sidebar");
+        let main = document.querySelector("main");
+
         if (sidebar.classList.contains("expanded")) {
             expander.style.transition = "none";
             expander.style.rotate = "0deg";
             sidebar.classList.remove("expanded");
             topbar.style.width = "100%";
+            main.style.padding = "4rem 3rem 1rem 3rem";
         }
         else {
             expander.style.rotate = "180deg";
             topbar.style.width = "calc(100% - 13rem)";
+            main.style.padding = "4rem 3rem 1rem 19rem";
             sidebar.classList.add("expanded");
         }
     }
