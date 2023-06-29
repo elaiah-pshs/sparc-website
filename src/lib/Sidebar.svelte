@@ -30,9 +30,11 @@
         </li>        
     </ul>
 
-    <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
-        <li class="sidebar-item">Readings</li>
-        <li class="sidebar-item">Practice Tests</li>
-        <li class="sidebar-item">Other Materials</li>
-    </ul>
+    <nav>
+        <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
+            <li class="sidebar-item">Readings</li>
+            <li class="sidebar-item">Practice Tests</li>
+            <li class="sidebar-item">Other Materials</li>
+        </ul>
+    </nav>
 </aside>
