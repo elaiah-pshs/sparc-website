@@ -8,6 +8,8 @@
     let path = $page.url.pathname, current_path = '';
     let separator = `<span class="path-divider">/</span>`;
     const links = [`<a class="path-link" href="./">home</a>`];
+
+    let topbar, expander;
     let dropdown_visible = false;
 
     // test path
@@ -20,12 +22,50 @@
 
     function toggleSidebar() {
         let sidebar = document.querySelector(".sidebar");
-        sidebar.classList.add("toggled");
+
+        if (!sidebar.classList.contains("expanded")) {
+            expander.style.transition = "500ms";
+            expander.src = "icons/expand_sidebar.svg";
+            sidebar.classList.add("toggled");
+        }   
     }
 
     function hideSidebar() {
         let sidebar = document.querySelector(".sidebar");
+
+        if (!sidebar.classList.contains("expanded")) {
+            // if (expander.style.rotate == "180deg")
+            //     expander.style.rotate = "0deg";
+            
+            expander.src = "icons/sidebar.svg";
+        }
+
         sidebar.classList.remove("toggled");
+    }
+
+    function expandSidebarClick() {
+        let sidebar = document.querySelector(".sidebar");
+        if (sidebar.classList.contains("expanded")) {
+            expander.style.transition = "none";
+            expander.style.rotate = "0deg";
+            sidebar.classList.remove("expanded");
+            topbar.style.width = "100%";
+        }
+        else {
+            expander.style.rotate = "180deg";
+            topbar.style.width = "calc(100% - 13rem)";
+            sidebar.classList.add("expanded");
+        }
+    }
+
+    function expandSidebarKey(e) {
+        let sidebar = document.querySelector(".sidebar");
+        if(e.key == "Enter") {
+            if (sidebar.classList.contains("expanded"))
+                sidebar.classList.remove("expanded")
+            else
+                sidebar.classList.add("expanded");
+        }
     }
 
     function toggleDropdownClick() {
@@ -42,49 +82,57 @@
     }
 </script>
 
-<div class="topbar">
-    <ul class="topbar-items">
-        <li on:mouseover={toggleSidebar} on:focus={toggleSidebar} on:mouseout={hideSidebar} on:blur={hideSidebar} class="topbar-item">
-            <img class="topbar-link topbar-icon" src="icons/sidebar.svg" alt="Open sidebar">
-        </li>
+<ul class="topbar" bind:this={topbar}>
+    <li
+        class="topbar-item"
 
-        <li class="path">
-            {#if links.length <= 4}
-                {@html links.join(separator)}
-            {:else}
-                {@html links[0]}
-                {@html separator}
-                <span class="path-contraction" on:click={toggleDropdownClick} on:keydown={toggleDropdownKey} use:clickOutside on:click_outside={hideDropdownClick}>
-                    <span class="path-link">
-                        ...
-                    </span>
-                    {#if dropdown_visible}
-                        <span class="path-tooltip" transition:fade>
-                            {@html links.slice(1, -2).join('')}
-                        </span>
-                    {/if}
+        on:mouseover={toggleSidebar}
+        on:focus={toggleSidebar}
+        on:mouseout={hideSidebar}
+        on:blur={hideSidebar}
+
+        on:click={expandSidebarClick}
+        on:keydown={expandSidebarKey}
+    >
+        <img class="topbar-link topbar-icon" src="icons/sidebar.svg" alt="Open sidebar" bind:this={expander} />
+    </li>
+
+    <li class="path">
+        {#if links.length <= 4}
+            {@html links.join(separator)}
+        {:else}
+            {@html links[0]}
+            {@html separator}
+            <span class="path-contraction" on:click={toggleDropdownClick} on:keydown={toggleDropdownKey} use:clickOutside on:click_outside={hideDropdownClick}>
+                <span class="path-link">
+                    ...
                 </span>
-                {@html separator}
-                {@html links.slice(-2).join(separator)}
-            {/if}
-        </li>
+                {#if dropdown_visible}
+                    <span class="path-tooltip" transition:fade>
+                        {@html links.slice(1, -2).join('')}
+                    </span>
+                {/if}
+            </span>
+            {@html separator}
+            {@html links.slice(-2).join(separator)}
+        {/if}
+    </li>
 
-        <li class="topbar-item">
-            <NavLink location="topbar" href="./" text="Apply now!" />
-        </li>
+    <li class="topbar-item">
+        <NavLink location="topbar" href="./" text="Apply now!" />
+    </li>
 
-        <li class="topbar-divider"></li>
+    <li class="topbar-divider"></li>
 
-        <li class="topbar-item">
-            <NavLink location="topbar" href="./about" src="icons/placeholder.svg" alt="About Us" text={false} />
-        </li>
+    <li class="topbar-item">
+        <NavLink location="topbar" href="./about" src="icons/placeholder.svg" alt="About Us" text={false} />
+    </li>
 
-        <li class="topbar-item">
-            <NavLink location="topbar" href="./help" src="icons/placeholder.svg" alt="Help" text={false} />
-        </li>
+    <li class="topbar-item">
+        <NavLink location="topbar" href="./help" src="icons/placeholder.svg" alt="Help" text={false} />
+    </li>
 
-        <li class="topbar-item">
-            <NavLink location="topbar" href="./report" src="icons/placeholder.svg" alt="Report an Issue" text={false} />
-        </li>
-    </ul>
-</div>
+    <li class="topbar-item">
+        <NavLink location="topbar" href="./report" src="icons/placeholder.svg" alt="Report an Issue" text={false} />
+    </li>
+</ul>

@@ -13,7 +13,7 @@
     }
 </script>
 
-<aside class="sidebar toggled">
+<aside class="sidebar">
     <div class="sidebar-header">
         <NavLink location="sidebar-header" href="./" src="icons/placeholder.svg" alt="SPARC 2028" text />
     </div>
@@ -30,52 +30,9 @@
         </li>        
     </ul>
 
-    <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        <li class="sidebar-item">placeholder</li>
-        
-        <!-- <li class="sidebar-dropdown">Readings</li>
-        <li class="sidebar-dropdown">Practice Tests</li>
-        <li class="sidebar-dropdown">Other Materials</li> -->
+    <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
+        <li class="sidebar-item">Readings</li>
+        <li class="sidebar-item">Practice Tests</li>
+        <li class="sidebar-item">Other Materials</li>
     </ul>
 </aside>

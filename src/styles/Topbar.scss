@@ -9,12 +9,6 @@
     width: 100%;
     height: 3rem;
 
-    transition: vars.$transition-medium;
-}
-
-.topbar-items {
-    height: 100%;
-
     margin: 0;
     padding: 0;
 
@@ -22,6 +16,8 @@
     align-items: center;
 
     list-style: none;
+
+    transition: vars.$transition-medium;
 }
 
 .topbar-item {
@@ -50,6 +46,7 @@
 .topbar-icon {
     width: 1.5rem;
     height: 1.5rem;
+    transition: vars.$transition-medium;
 }
 
 .topbar-divider {
