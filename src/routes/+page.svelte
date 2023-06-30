@@ -1,22 +1,12 @@
 <script>
-    import { onMount } from 'svelte';
-    import '../styles/root.scss';
-
-    let display = "";
-
-    onMount(() => {
-        fetch("./templates/test.html")
-            .then((res) => res.text())
-            .then((text) => {
-                display = text;
-            })
-            .catch((e) => console.error(e));
-    });
+	import Topbar from '$lib/Topbar.svelte';
 </script>
 
 <svelte:head>
-    <title>Welcome to SPARC 2028!</title>
+	<title>Home</title>
 </svelte:head>
+
+<Topbar />
 
 <!-- <main>
     {@html display}
