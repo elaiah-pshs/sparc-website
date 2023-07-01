@@ -1,10 +1,20 @@
 <script>
-    import Topbar from '$lib/Topbar.svelte';
+	import { expanded } from '$lib/data/stores.js';
+	import PathDisplay from '$lib/PathDisplay.svelte';
+
+	let is_expanded;
+	expanded.subscribe((value) => {
+		is_expanded = value;
+	});
 </script>
 
-<Topbar />
+<svelte:head>
+	<title>About</title>
+</svelte:head>
 
-<main>
+<PathDisplay />
+
+<main class={is_expanded ? " expanded" : ""}>
     <h1>About Us</h1>
     <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </main>

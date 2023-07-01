@@ -1,9 +1,14 @@
 <script>
+	import { expanded } from '$lib/data/stores.js';
     import NavLink from "$lib/NavLink.svelte";
-    import * as root from '../data/summary.json';
+    import * as root from '$lib/data/summary.json';
     import '../styles/Sidebar.scss';
 
-    let dropdowns;
+    let is_expanded, dropdowns;
+
+    expanded.subscribe((value) => {
+		is_expanded = value;
+	});
     
     function handleScroll() {
         let links = document.querySelector(".sidebar-links");
@@ -14,7 +19,7 @@
     }
 </script>
 
-<aside class="sidebar">
+<aside class={"sidebar" + (is_expanded ? " expanded" : "")}>
     <div class="sidebar-header">
         <NavLink location="sidebar-header" href="./" src="icons/placeholder.svg" alt="SPARC 2028" text />
     </div>
@@ -34,7 +39,7 @@
     <nav class="sidebar-nav">
         <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
             <li class="sidebar-dropdown">
-                <NavLink toggle {...root}/>
+                <NavLink toggle open {...root}/>
             </li>
             <li class="sidebar-item">Practice Tests</li>
             <li class="sidebar-item">Other Materials</li>

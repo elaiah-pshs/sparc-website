@@ -5,7 +5,7 @@
 	export let alt = "";
 	export let text = "";
 
-    export let dropdown = false;
+    export let toggle = false;
     export let open = false;
 	export let children = [];
 	export let indent = 0;
@@ -20,16 +20,18 @@
 	}
 </script>
 
-{#if dropdown}
+{#if toggle}
     <div class={location + "-toggle"} style="padding-left: {indent}rem">
-        <img
-            class={location + "-toggle-toggler"}
-            src="icons/toggle_link.svg"
-            alt={"Toggle open"}
+        {#if children[0]}
+            <img
+                class={location + "-toggle-toggler"}
+                src="icons/toggle_link.svg"
+                alt={"Toggle open"}
 
-            on:click={toggleOpenClick}
-            on:keydown={toggleOpenKey}
-        />
+                on:click={toggleOpenClick}
+                on:keydown={toggleOpenKey}
+            />
+        {/if}
 
         <a class={location + "-toggle-link"} href={href}>
             {#if src != ""}
@@ -45,11 +47,11 @@
     
     {#if open}
         {#each children as child}
-            <svelte:self {...child} indent={indent + 1.5} />
+            <svelte:self {...child} toggle indent={indent + 1.5} />
         {/each}
     {/if}
 {:else}
-    <a class={location + "-link"} href={href} style="padding-left: {indent}rem">
+    <a class={location + "-link"} href={href}>
         {#if src != ""}
             <img class={location + "-icon"} src={src} alt={alt}>
         {/if}

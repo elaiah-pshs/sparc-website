@@ -4,9 +4,6 @@
     "src": "icons/placeholder.svg",
     "alt": "reviewers",
     "text": "Reviewers",
-
-    "dropdown": true,
-    "open": true,
     "children": [
         {
             "location": "sidebar",
@@ -14,8 +11,6 @@
             "src": "icons/placeholder.svg",
             "alt": "Quarter 1",
             "text": "Quarter 1",
-
-            "dropdown": true,
             "children": [
                 {
                     "location": "sidebar",
@@ -46,8 +41,6 @@
             "src": "icons/placeholder.svg",
             "alt": "Quarter 2",
             "text": "Quarter 2",
-
-            "dropdown": true,
             "children": [
                 {
                     "location": "sidebar",
@@ -78,8 +71,6 @@
             "src": "icons/placeholder.svg",
             "alt": "Quarter 3",
             "text": "Quarter 3",
-
-            "dropdown": true,
             "children": [
                 {
                     "location": "sidebar",
@@ -110,8 +101,6 @@
             "src": "icons/placeholder.svg",
             "alt": "Quarter 4",
             "text": "Quarter 4",
-
-            "dropdown": true,
             "children": [
                 {
                     "location": "sidebar",

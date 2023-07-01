@@ -1,18 +1,20 @@
 <script>
-	import Topbar from '$lib/Topbar.svelte';
+	import { expanded } from '$lib/data/stores.js';
+	import PathDisplay from '$lib/PathDisplay.svelte';
+
+	let is_expanded;
+	expanded.subscribe((value) => {
+		is_expanded = value;
+	});
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-<Topbar />
+<PathDisplay />
 
-<!-- <main>
-    {@html display}
-</main> -->
-
-<main>
+<main class={is_expanded ? " expanded" : ""}>
 	<h1>Welcome to SPARC 2028!</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </main>
