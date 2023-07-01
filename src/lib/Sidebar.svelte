@@ -35,8 +35,7 @@
     <nav class="sidebar-nav">
         <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
             <li class="sidebar-dropdown">
-                Reviewers
-                <ToggleNavLink {...root}/>
+                <NavLink toggle {...root}/>
             </li>
             <li class="sidebar-item">Practice Tests</li>
             <li class="sidebar-item">Other Materials</li>

@@ -1,57 +1,140 @@
 {
-    "name": "Root",
+    "location": "sidebar",
+    "href": "./reviewers",
+    "src": "icons/placeholder.svg",
+    "alt": "reviewers",
+    "text": "Reviewers",
+
+    "dropdown": true,
+    "open": true,
     "children": [
         {
-            "name": "Child 1",
+            "location": "sidebar",
+            "href": "./reviewers/q1",
+            "src": "icons/placeholder.svg",
+            "alt": "Quarter 1",
+            "text": "Quarter 1",
+
+            "dropdown": true,
             "children": [
                 {
-                    "name": "Grandchild 1",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q1/is",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Integrated Science",
+                    "text": "Integrated Science"
                 },
                 {
-                    "name": "Grandchild 2",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q1/es",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Earth Science",
+                    "text": "Earth Science"
                 },
                 {
-                    "name": "Grandchild 3",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q1/math",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Mathematics",
+                    "text": "Mathematics"
                 }
             ]
         },
         {
-            "name": "Child 2",
+            "location": "sidebar",
+            "href": "./reviewers/q2",
+            "src": "icons/placeholder.svg",
+            "alt": "Quarter 2",
+            "text": "Quarter 2",
+
+            "dropdown": true,
             "children": [
                 {
-                    "name": "Grandchild 1",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q2/is",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Integrated Science",
+                    "text": "Integrated Science"
                 },
                 {
-                    "name": "Grandchild 2",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q2/es",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Earth Science",
+                    "text": "Earth Science"
                 },
                 {
-                    "name": "Grandchild 3",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q2/math",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Mathematics",
+                    "text": "Mathematics"
                 }
             ]
         },
         {
-            "name": "Child 3",
+            "location": "sidebar",
+            "href": "./reviewers/q3",
+            "src": "icons/placeholder.svg",
+            "alt": "Quarter 3",
+            "text": "Quarter 3",
+
+            "dropdown": true,
             "children": [
                 {
-                    "name": "Grandchild 1",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q3/is",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Integrated Science",
+                    "text": "Integrated Science"
                 },
                 {
-                    "name": "Grandchild 2",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q3/es",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Earth Science",
+                    "text": "Earth Science"
                 },
                 {
-                    "name": "Grandchild 3",
-                    "children": []
+                    "location": "sidebar",
+                    "href": "./reviewers/q3/math",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Mathematics",
+                    "text": "Mathematics"
+                }
+            ]
+        },
+        {
+            "location": "sidebar",
+            "href": "./reviewers/q4",
+            "src": "icons/placeholder.svg",
+            "alt": "Quarter 4",
+            "text": "Quarter 4",
+
+            "dropdown": true,
+            "children": [
+                {
+                    "location": "sidebar",
+                    "href": "./reviewers/q4/is",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Integrated Science",
+                    "text": "Integrated Science"
+                },
+                {
+                    "location": "sidebar",
+                    "href": "./reviewers/q4/es",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Earth Science",
+                    "text": "Earth Science"
+                },
+                {
+                    "location": "sidebar",
+                    "href": "./reviewers/q4/math",
+                    "src": "icons/placeholder.svg",
+                    "alt": "Mathematics",
+                    "text": "Mathematics"
                 }
             ]
         }
-    ],
-    "open": true
+    ]
 }
