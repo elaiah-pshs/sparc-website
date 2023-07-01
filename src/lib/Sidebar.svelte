@@ -1,6 +1,5 @@
 <script>
     import NavLink from "$lib/NavLink.svelte";
-    import ToggleNavLink from '$lib/ToggleNavLink.svelte';
     import * as root from '../data/summary.json';
     import '../styles/Sidebar.scss';
 
