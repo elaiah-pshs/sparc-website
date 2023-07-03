@@ -8,7 +8,7 @@
     export let toggle = false;
     export let open = false;
 	export let children = [];
-	export let indent = 0;
+	export let indent = 1.5;
     
     function toggleOpenClick() {
 		open = !open;
@@ -21,33 +21,34 @@
 </script>
 
 {#if toggle}
-    <div class={location + "-toggle"} style="padding-left: {indent}rem">
+    <div class={location + "-item"}>
         {#if children[0]}
             <img
-                class={location + "-toggle-toggler"}
+                class={location + "-toggler" + (open ? " rotated" : "")}
                 src="icons/toggle_link.svg"
                 alt={"Toggle open"}
+                style="margin-left: {indent - 1}rem"
 
                 on:click={toggleOpenClick}
                 on:keydown={toggleOpenKey}
             />
         {/if}
 
-        <a class={location + "-toggle-link"} href={href}>
+        <a class={location + "-link"} href={href} style="padding-left: {indent}rem">
             {#if src != ""}
-                <img class={location + "-toggle-icon"} src={src} alt={alt}>
+                <img class={location + "-icon"} src={src} alt={alt}>
             {/if}
             {#if text == true}
-                <span class={location + "-toggle-text"}>{alt}</span>
+                <span class={location + "-text"}>{alt}</span>
             {:else if text != ""}
-                <span class={location + "-toggle-text"}>{text}</span>
+                <span class={location + "-text"}>{text}</span>
             {/if}
         </a>
     </div>
     
     {#if open}
         {#each children as child}
-            <svelte:self {...child} toggle indent={indent + 1.5} />
+            <svelte:self {...child} toggle indent={indent + 1} />
         {/each}
     {/if}
 {:else}

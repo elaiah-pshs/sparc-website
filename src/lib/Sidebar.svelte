@@ -36,8 +36,8 @@
         </li>        
     </ul>
 
-    <nav class="sidebar-nav">
-        <ul class="sidebar-dropdowns" bind:this={dropdowns} on:scroll={handleScroll}>        
+    <nav class="sidebar-nav" bind:this={dropdowns} on:scroll={handleScroll}>
+        <ul class="sidebar-dropdowns">        
             <li class="sidebar-dropdown">
                 <NavLink toggle open {...root}/>
             </li>
