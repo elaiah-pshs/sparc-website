@@ -3,16 +3,12 @@
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Topbar.scss';
 
-    let is_expanded, expander;
-
-    expanded.subscribe((value) => {
-		is_expanded = value;
-	});
-
+    let expander;
+    
     function toggleSidebar() {
         let sidebar = document.querySelector(".sidebar");
 
-        if (!is_expanded) {
+        if (!$expanded) {
             expander.style.transition = "500ms";
             expander.src = "icons/expand_sidebar.svg";
             sidebar.classList.add("toggled");
@@ -22,7 +18,7 @@
     function hideSidebar() {
         let sidebar = document.querySelector(".sidebar");
 
-        if (!is_expanded)
+        if (!$expanded)
             expander.src = "icons/sidebar.svg";
 
         sidebar.classList.remove("toggled");
@@ -38,7 +34,7 @@
     }
 </script>
 
-<ul class={"topbar" + (is_expanded ? " expanded" : "")}>
+<ul class={"topbar" + ($expanded ? " expanded" : "")}>
     <li
         class="topbar-item"
 
@@ -51,7 +47,7 @@
         on:keydown={expandSidebarKey}
     >
         <img
-            class={"topbar-link topbar-icon" + (is_expanded ? " expanded" : "")}
+            class={"topbar-link topbar-icon" + ($expanded ? " expanded" : "")}
             src="icons/sidebar.svg"
             alt="Open sidebar"
             bind:this={expander}

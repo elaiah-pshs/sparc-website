@@ -4,11 +4,7 @@
     import * as root from '$lib/data/summary.json';
     import '../styles/Sidebar.scss';
 
-    let is_expanded, dropdowns;
-
-    expanded.subscribe((value) => {
-		is_expanded = value;
-	});
+    let dropdowns;    
     
     function handleScroll() {
         let links = document.querySelector(".sidebar-links");
@@ -19,7 +15,7 @@
     }
 </script>
 
-<aside class={"sidebar" + (is_expanded ? " expanded" : "")}>
+<aside class={"sidebar" + ($expanded ? " expanded" : "")}>
     <div class="sidebar-header">
         <NavLink location="sidebar-header" href="./" src="icons/placeholder.svg" alt="SPARC 2028" text />
     </div>

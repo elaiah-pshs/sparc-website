@@ -10,11 +10,9 @@
     const links = [`<a class="path-link" href="./">home</a>`];
 
     let dropdown_visible = false;
-    
-    let is_expanded;
 
     expanded.subscribe((value) => {
-        is_expanded = value;
+        $expanded = value;
     });
 
     // test path
@@ -39,7 +37,7 @@
     }
 </script>
 
-<div class={"path" + (is_expanded ? " expanded" : "")}>
+<div class={"path" + ($expanded ? " expanded" : "")}>
     {#if links.length <= 4}
         {@html links.join(separator)}
     {:else}

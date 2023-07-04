@@ -6,8 +6,6 @@
 	<title>Announcements</title>
 </svelte:head>
 
-
-
 <Main>
     <h1>Announcements</h1>
     <div class="announcement">
