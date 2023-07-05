@@ -1,0 +1,178 @@
+{
+	"location": "sidebar",
+    "text": true,
+    
+	"href": "/materials/reviewers",
+	"src": "/icons/placeholder.svg",
+	"alt": "Reviewers",
+	"children": [
+		{
+			"href": "/materials/reviewers/q1",
+			"src": "/icons/placeholder.svg",
+			"alt": "Quarter 1",
+			"children": [
+				{
+					"href": "/materials/reviewers/q1/is",
+					"src": "/icons/placeholder.svg",
+					"alt": "Integrated Science"
+				},
+				{
+					"href": "/materials/reviewers/q1/math",
+					"src": "/icons/placeholder.svg",
+					"alt": "Mathematics"
+				},
+				{
+					"href": "/materials/reviewers/q1/eng",
+					"src": "/icons/placeholder.svg",
+					"alt": "English"
+				},
+				{
+					"href": "/materials/reviewers/q1/fil",
+					"src": "/icons/placeholder.svg",
+					"alt": "Filipino"
+				},
+				{
+					"href": "/materials/reviewers/q1/ss",
+					"src": "/icons/placeholder.svg",
+					"alt": "Social Science"
+				},
+				{
+					"href": "/materials/reviewers/q1/cs",
+					"src": "/icons/placeholder.svg",
+					"alt": "Computer Science"
+				},
+				{
+					"href": "/materials/reviewers/q1/es",
+					"src": "/icons/placeholder.svg",
+					"alt": "Earth Science"
+				}
+			]
+		},
+		{
+			"href": "/materials/reviewers/q2",
+			"src": "/icons/placeholder.svg",
+			"alt": "Quarter 2",
+			"children": [
+				{
+					"href": "/materials/reviewers/q2/is",
+					"src": "/icons/placeholder.svg",
+					"alt": "Integrated Science"
+				},
+				{
+					"href": "/materials/reviewers/q2/math",
+					"src": "/icons/placeholder.svg",
+					"alt": "Mathematics"
+				},
+				{
+					"href": "/materials/reviewers/q2/eng",
+					"src": "/icons/placeholder.svg",
+					"alt": "English"
+				},
+				{
+					"href": "/materials/reviewers/q2/fil",
+					"src": "/icons/placeholder.svg",
+					"alt": "Filipino"
+				},
+				{
+					"href": "/materials/reviewers/q2/ss",
+					"src": "/icons/placeholder.svg",
+					"alt": "Social Science"
+				},
+				{
+					"href": "/materials/reviewers/q2/cs",
+					"src": "/icons/placeholder.svg",
+					"alt": "Computer Science"
+				},
+				{
+					"href": "/materials/reviewers/q2/es",
+					"src": "/icons/placeholder.svg",
+					"alt": "Earth Science"
+				}
+			]
+		},
+		{
+			"href": "/materials/reviewers/q3",
+			"src": "/icons/placeholder.svg",
+			"alt": "Quarter 3",
+			"children": [
+				{
+					"href": "/materials/reviewers/q3/is",
+					"src": "/icons/placeholder.svg",
+					"alt": "Integrated Science"
+				},
+				{
+					"href": "/materials/reviewers/q3/math",
+					"src": "/icons/placeholder.svg",
+					"alt": "Mathematics"
+				},
+				{
+					"href": "/materials/reviewers/q3/eng",
+					"src": "/icons/placeholder.svg",
+					"alt": "English"
+				},
+				{
+					"href": "/materials/reviewers/q3/fil",
+					"src": "/icons/placeholder.svg",
+					"alt": "Filipino"
+				},
+				{
+					"href": "/materials/reviewers/q3/ss",
+					"src": "/icons/placeholder.svg",
+					"alt": "Social Science"
+				},
+				{
+					"href": "/materials/reviewers/q3/cs",
+					"src": "/icons/placeholder.svg",
+					"alt": "Computer Science"
+				},
+				{
+					"href": "/materials/reviewers/q3/es",
+					"src": "/icons/placeholder.svg",
+					"alt": "Earth Science"
+				}
+			]
+		},
+		{
+			"href": "/materials/reviewers/q4",
+			"src": "/icons/placeholder.svg",
+			"alt": "Quarter 4",
+			"children": [
+				{
+					"href": "/materials/reviewers/q4/is",
+					"src": "/icons/placeholder.svg",
+					"alt": "Integrated Science"
+				},
+				{
+					"href": "/materials/reviewers/q4/math",
+					"src": "/icons/placeholder.svg",
+					"alt": "Mathematics"
+				},
+				{
+					"href": "/materials/reviewers/q4/eng",
+					"src": "/icons/placeholder.svg",
+					"alt": "English"
+				},
+				{
+					"href": "/materials/reviewers/q4/fil",
+					"src": "/icons/placeholder.svg",
+					"alt": "Filipino"
+				},
+				{
+					"href": "/materials/reviewers/q4/ss",
+					"src": "/icons/placeholder.svg",
+					"alt": "Social Science"
+				},
+				{
+					"href": "/materials/reviewers/q4/cs",
+					"src": "/icons/placeholder.svg",
+					"alt": "Computer Science"
+				},
+				{
+					"href": "/materials/reviewers/q4/es",
+					"src": "/icons/placeholder.svg",
+					"alt": "Earth Science"
+				}
+			]
+		}
+	]
+}

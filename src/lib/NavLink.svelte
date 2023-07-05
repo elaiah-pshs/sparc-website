@@ -48,7 +48,7 @@
     
     {#if open}
         {#each children as child}
-            <svelte:self {...child} toggle indent={indent + 1} />
+            <svelte:self {...child} toggle location={location} text={text} indent={indent + 1} />
         {/each}
     {/if}
 {:else}

@@ -88,6 +88,7 @@
 
 .sidebar-link {
     width: 100%;
+    min-width: 0;
     height: 1rem;
 
     margin: 0;
@@ -95,6 +96,7 @@
     box-sizing: content-box;
 
     display: flex;
+    flex: 1;
     align-items: center;
     column-gap: 0.25rem;
 }
@@ -107,11 +109,16 @@
     font-family: "Roboto Mono", "Courier New", monospace;
     font-size: math.div(7rem, 8);
     font-weight: 400;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebar-nav {
     width: 100%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar-dropdowns {

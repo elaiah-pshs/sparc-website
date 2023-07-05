@@ -15,10 +15,8 @@
     // path = "/reviewers/q1/mqe/math/coordinates";
 
     path.split('/').filter((str) => str !== '').forEach(element => {
-        console.log("start: " + current_path);
         current_path += ('/' + element);
         links.push(`<a class="path-link" href="${current_path}">${element}</a>`);
-        console.log("end: " + current_path);
     });
 
     function toggleDropdownClick() {
