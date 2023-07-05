@@ -25,7 +25,7 @@
         {#if children[0]}
             <img
                 class={location + "-toggler" + (open ? " rotated" : "")}
-                src="icons/toggle_link.svg"
+                src="/icons/toggle_link.svg"
                 alt={"Toggle open"}
                 style="margin-left: {indent - 1}rem"
 

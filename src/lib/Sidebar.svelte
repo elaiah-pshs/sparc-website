@@ -17,18 +17,18 @@
 
 <aside class={"sidebar" + ($expanded ? " expanded" : "")}>
     <div class="sidebar-header">
-        <NavLink location="sidebar-header" href="./" src="icons/placeholder.svg" alt="SPARC 2028" text />
+        <NavLink location="sidebar-header" href="/" src="/icons/placeholder.svg" alt="SPARC 2028" text />
     </div>
 
     <ul class="sidebar-links">
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="./announcements" src="icons/placeholder.svg" alt="Announcements" text />
+            <NavLink location="sidebar" href="/announcements" src="/icons/placeholder.svg" alt="Announcements" text />
         </li>
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="./progress" src="icons/placeholder.svg" alt="Progress Tracker" text />
+            <NavLink location="sidebar" href="/progress" src="/icons/placeholder.svg" alt="Progress Tracker" text />
         </li>
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="./materials" src="icons/placeholder.svg" alt="All Materials" text />
+            <NavLink location="sidebar" href="/materials" src="/icons/placeholder.svg" alt="All Materials" text />
         </li>        
     </ul>
 

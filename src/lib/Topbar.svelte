@@ -10,7 +10,7 @@
 
         if (!$expanded) {
             expander.style.transition = "500ms";
-            expander.src = "icons/expand_sidebar.svg";
+            expander.src = "/icons/expand_sidebar.svg";
             sidebar.classList.add("toggled");
         }   
     }
@@ -19,7 +19,7 @@
         let sidebar = document.querySelector(".sidebar");
 
         if (!$expanded)
-            expander.src = "icons/sidebar.svg";
+            expander.src = "/icons/sidebar.svg";
 
         sidebar.classList.remove("toggled");
     }
@@ -48,27 +48,27 @@
     >
         <img
             class={"topbar-link topbar-icon" + ($expanded ? " expanded" : "")}
-            src="icons/sidebar.svg"
+            src="/icons/sidebar.svg"
             alt="Open sidebar"
             bind:this={expander}
         />
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="./" text="Apply now!" />
+        <NavLink location="topbar" href="/" text="Apply now!" />
     </li>
 
     <li class="topbar-divider"></li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="./about" src="icons/placeholder.svg" alt="About Us" text={false} />
+        <NavLink location="topbar" href="/about" src="/icons/placeholder.svg" alt="About Us" text={false} />
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="./help" src="icons/placeholder.svg" alt="Help" text={false} />
+        <NavLink location="topbar" href="/help" src="/icons/placeholder.svg" alt="Help" text={false} />
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="./report" src="icons/placeholder.svg" alt="Report an Issue" text={false} />
+        <NavLink location="topbar" href="/report" src="/icons/placeholder.svg" alt="Report an Issue" text={false} />
     </li>
 </ul>

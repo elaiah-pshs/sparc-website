@@ -7,20 +7,18 @@
 
     let path = $page.url.pathname, current_path = '';
     let separator = `<span class="path-divider">/</span>`;
-    const links = [`<a class="path-link" href="./">home</a>`];
+    const links = [`<a class="path-link" href="/">home</a>`];
 
     let dropdown_visible = false;
-
-    expanded.subscribe((value) => {
-        $expanded = value;
-    });
 
     // test path
     // path = "/reviewers/q1/mqe/math/coordinates";
 
     path.split('/').filter((str) => str !== '').forEach(element => {
+        console.log("start: " + current_path);
         current_path += ('/' + element);
-        links.push(`<a class="path-link" href=".${current_path}">${element}</a>`);
+        links.push(`<a class="path-link" href="${current_path}">${element}</a>`);
+        console.log("end: " + current_path);
     });
 
     function toggleDropdownClick() {
