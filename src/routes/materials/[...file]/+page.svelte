@@ -1,5 +1,6 @@
 <script>
 	import Main from '$lib/Main.svelte';
+    export let data;
 </script>
 
 <svelte:head>
@@ -7,6 +8,6 @@
 </svelte:head>
 
 <Main>
-    <h1>Reviewers</h1>
+    <h1>{data.material.title}</h1>
     <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </Main>

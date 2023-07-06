@@ -5,7 +5,8 @@
     import { clickOutside } from '../js/clickOutside.js';
     import '../styles/PathDisplay.scss';
 
-    let path = $page.url.pathname, current_path = '';
+    export let path = $page.url.pathname;
+    let current_path = '';
     let separator = `<span class="path-divider">/</span>`;
     const links = [`<a class="path-link" href="/">home</a>`];
 

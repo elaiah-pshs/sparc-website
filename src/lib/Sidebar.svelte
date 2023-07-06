@@ -1,9 +1,7 @@
 <script>
 	import { expanded } from '$lib/data/stores.js';
+    import { links } from '$lib/data/links.js';
     import NavLink from "$lib/NavLink.svelte";
-    import * as reviewers from '$lib/data/reviewers.json';
-    import * as practices from '$lib/data/practices.json';
-    import * as others from '$lib/data/others.json';
     import '../styles/Sidebar.scss';
 
     let dropdowns;    
@@ -37,13 +35,13 @@
     <nav class="sidebar-nav" bind:this={dropdowns} on:scroll={handleScroll}>
         <ul class="sidebar-dropdowns">
             <li class="sidebar-dropdown">
-                <NavLink toggle open {...reviewers}/>
+                <NavLink toggle open {...links[0]}/>
             </li>
             <li class="sidebar-dropdown">
-                <NavLink toggle open {...practices}/>
+                <NavLink toggle open {...links[1]}/>
             </li>
             <li class="sidebar-dropdown">
-                <NavLink toggle open {...others}/>
+                <NavLink toggle open {...links[2]}/>
             </li>
         </ul>
     </nav>
