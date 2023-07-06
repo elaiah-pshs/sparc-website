@@ -1,5 +1,5 @@
 <script>
-	import { expanded } from '$lib/data/stores.js';
+	import { toggled, expanded } from '$lib/data/stores.js';
     import { links } from '$lib/data/links.js';
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Sidebar.scss';
@@ -15,7 +15,7 @@
     }
 </script>
 
-<aside class={"sidebar" + ($expanded ? " expanded" : "")}>
+<aside class={"sidebar" + ($expanded ? " expanded" : "") + ($toggled && !$expanded ? " toggled" : "")}>
     <div class="sidebar-header">
         <NavLink location="sidebar-header" href="/" src="/icons/placeholder.svg" alt="SPARC 2028" text />
     </div>
