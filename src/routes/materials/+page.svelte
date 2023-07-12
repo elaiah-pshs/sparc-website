@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <svelte:head>
 	<title>Materials</title>
 </svelte:head>

@@ -7,8 +7,10 @@
 
     export let toggle = false;
     export let open = false;
-	export let children = [];
+	export let children = {};
 	export let indent = 1.5;
+
+    // console.log(href, JSON.stringify(children));
     
     function toggleOpenClick() {
 		open = !open;
@@ -22,7 +24,7 @@
 
 {#if toggle}
     <div class={location + "-item"}>
-        {#if children[0]}
+        {#if JSON.stringify(children) != "{}"}
             <img
                 class={location + "-toggler" + (open ? " rotated" : "")}
                 src="/icons/toggle_link.svg"
@@ -47,8 +49,8 @@
     </div>
     
     {#if open}
-        {#each children as child}
-            <svelte:self {...child} toggle location={location} text={text} indent={indent + 1} />
+        {#each Object.entries(children) as [key, value], index (key)}
+            <svelte:self {...value} toggle location={location} text={text} indent={indent + 1} />
         {/each}
     {/if}
 {:else}

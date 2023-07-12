@@ -358,7 +358,7 @@
         
         "href": "/materials/others",
         "src": "/icons/placeholder.svg",
-        "alt": "Practice Tests",
+        "alt": "Others",
         "children": {
             "q1": {
                 "href": "/materials/others/q1",

@@ -1,6 +1,6 @@
 <script>
 	import { toggled, expanded } from '$lib/data/stores.js';
-    import { links } from '$lib/data/links.js';
+    import materials from '$lib/data/materials.json';
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Sidebar.scss';
 
@@ -34,15 +34,11 @@
 
     <nav class="sidebar-nav" bind:this={dropdowns} on:scroll={handleScroll}>
         <ul class="sidebar-dropdowns">
-            <li class="sidebar-dropdown">
-                <NavLink toggle open {...links[0]}/>
-            </li>
-            <li class="sidebar-dropdown">
-                <NavLink toggle open {...links[1]}/>
-            </li>
-            <li class="sidebar-dropdown">
-                <NavLink toggle open {...links[2]}/>
-            </li>
+            {#each Object.entries(materials) as [key, value], index (key)}
+                <li class="sidebar-dropdown">
+                    <NavLink location="sidebar" text toggle open {...value}/>
+                </li>
+            {/each}
         </ul>
     </nav>
 </aside>

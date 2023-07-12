@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <svelte:head>
 	<title>Help</title>
 </svelte:head>
