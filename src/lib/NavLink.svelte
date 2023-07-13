@@ -1,4 +1,11 @@
 <script>
+    // TODO: remove location, text, toggle, and indent props
+
+    // TODO: add a type prop to determine where the link is and whether it
+    // should display text or not
+
+    // TODO: modify navlinks in other components
+
 	export let location;
 	export let href;
 	export let src = "";
@@ -9,16 +16,13 @@
     export let open = false;
 	export let children = {};
 	export let indent = 1.5;
-
-    // console.log(href, JSON.stringify(children));
     
     function toggleOpenClick() {
 		open = !open;
 	}
 
     function toggleOpenKey(e) {
-        if (e.key == "Enter")
-		    open = !open;
+        if (e.key == "Enter") { open = !open; }
 	}
 </script>
 

@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import materials from '$lib/data/materials.json' assert { type: 'json' };
+import { materials } from '../../../scripts/materials.js';
 
 export function load({ params }) {
 	const path = params.file.split('/');

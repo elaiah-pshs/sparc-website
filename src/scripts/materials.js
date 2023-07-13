@@ -1,4 +1,4 @@
-{
+export const materials = {
     "reviewers": {
         "href": "/materials/reviewers",
         "src": "/icons/placeholder.svg",
@@ -530,4 +530,4 @@
             }
         }
     }     
-}
+};

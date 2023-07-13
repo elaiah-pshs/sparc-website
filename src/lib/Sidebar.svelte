@@ -1,6 +1,6 @@
 <script>
-	import { toggled, expanded } from '$lib/data/stores.js';
-    import materials from '$lib/data/materials.json';
+	import { toggled, expanded } from '../scripts/stores.js';
+    import { materials } from '../scripts/materials.js';
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Sidebar.scss';
 

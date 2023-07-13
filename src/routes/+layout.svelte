@@ -1,5 +1,5 @@
 <script>
-	import { expanded } from '$lib/data/stores.js';
+	import { expanded } from '../scripts/stores.js';
     import { page } from '$app/stores'
 	import Topbar from '$lib/Topbar.svelte';
 	import Sidebar from '$lib/Sidebar.svelte';

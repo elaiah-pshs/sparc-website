@@ -1,8 +1,10 @@
 <script>
+    // TODO: make a more efficient way to generate path links
+
     import { fade } from 'svelte/transition';
     import { page } from '$app/stores'
-    import { clickOutside } from '../js/clickOutside.js';
-	import { toggled, expanded } from '$lib/data/stores.js';
+    import { clickOutside } from '../scripts/clickOutside.js';
+	import { toggled, expanded } from '../scripts/stores.js';
     import NavLink from "$lib/NavLink.svelte";
     import '../styles/Topbar.scss';
 
@@ -26,8 +28,7 @@
     }
 
     function expandSidebarKey(e) {
-        if (e.key == "Enter")
-            expanded.update((n) => !n);
+        if (e.key == "Enter") { expanded.update((n) => !n); }
     }
 
     function toggleDropdownClick() {
@@ -39,8 +40,7 @@
     }
 
     function toggleDropdownKey(e) {
-        if(e.key == "Enter")
-            dropdown_visible = !dropdown_visible;
+        if(e.key == "Enter") { dropdown_visible = !dropdown_visible; }
     }
 </script>
 
