@@ -1,71 +1,45 @@
 <script>
-    // TODO: remove location, text, toggle, and indent props
+    // Legend for link types:
 
-    // TODO: add a type prop to determine where the link is and whether it
-    // should display text or not
+    // - First character indicates location
+    // - For a toggle link, second character indicates whether the link is
+    //   toggled by a click on an arrow-shaped toggler arrow or a click on the
+    //   link itself
+    // - For a normal link, characters after the first signify the presence of
+    //   certain elements in the link
 
-    // TODO: modify navlinks in other components
+    // u - link is in the topbar
+    // l - link is in the sidebar
+    // p - link is in the path display in the topbar
 
-	export let location;
+    // a - toggle link expands with a click on an arrow icon
+    // e - toggle link expands with a click on the element itself
+
+    // i - link has icon
+    // t - link has text
+
+    export let type;
 	export let href;
 	export let src = "";
 	export let alt = "";
-	export let text = "";
 
-    export let toggle = false;
-    export let open = false;
-	export let children = {};
-	export let indent = 1.5;
-    
+    let location = {"u": "topbar", "l": "sidebar", "p": "path", "h": "sidebar-header"}[type[0]];
+
     function toggleOpenClick() {
 		open = !open;
-	}
-
-    function toggleOpenKey(e) {
-        if (e.key == "Enter") { open = !open; }
+        console.log("clicked");
 	}
 </script>
 
-{#if toggle}
-    <div class={location + "-item"}>
-        {#if JSON.stringify(children) != "{}"}
-            <img
-                class={location + "-toggler" + (open ? " rotated" : "")}
-                src="/icons/toggle_link.svg"
-                alt={"Toggle open"}
-                style="margin-left: {indent - 1}rem"
 
-                on:click={toggleOpenClick}
-                on:keydown={toggleOpenKey}
-            />
-        {/if}
+<a class={location + "-link"} href={href}>
+    <slot></slot>
 
-        <a class={location + "-link"} href={href} style="padding-left: {indent}rem">
-            {#if src != ""}
-                <img class={location + "-icon"} src={src} alt={alt}>
-            {/if}
-            {#if text == true}
-                <span class={location + "-text"}>{alt}</span>
-            {:else if text != ""}
-                <span class={location + "-text"}>{text}</span>
-            {/if}
-        </a>
-    </div>
-    
-    {#if open}
-        {#each Object.entries(children) as [key, value], index (key)}
-            <svelte:self {...value} toggle location={location} text={text} indent={indent + 1} />
-        {/each}
+    {#if type.indexOf('i') != -1}
+        <img class={location + "-icon"} src={src} alt={alt}>
     {/if}
-{:else}
-    <a class={location + "-link"} href={href}>
-        {#if src != ""}
-            <img class={location + "-icon"} src={src} alt={alt}>
-        {/if}
-        {#if text == true}
-            <span class={location + "-text"}>{alt}</span>
-        {:else if text != ""}
-            <span class={location + "-text"}>{text}</span>
-        {/if}
-    </a>
-{/if}
+
+    {#if type.indexOf('t') != -1}
+        <span class={location + "-text"}>{alt}</span>
+    {/if}
+</a>

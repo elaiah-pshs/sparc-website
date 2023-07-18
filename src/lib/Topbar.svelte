@@ -1,50 +1,71 @@
 <script>
-    // TODO: make a more efficient way to generate path links
-
-    import { fade } from 'svelte/transition';
-    import { page } from '$app/stores'
-    import { clickOutside } from '../scripts/clickOutside.js';
-	import { toggled, expanded } from '../scripts/stores.js';
+    import { page, navigating } from '$app/stores'
+    import { clickOutside } from '../scripts/clickOutside';
+    import { pages, findPage } from '../scripts/pages.js';
+	import { path_toggled, sidebar_toggled, sidebar_expanded } from '../scripts/stores.js';
     import NavLink from "$lib/NavLink.svelte";
+    import Toggle from "$lib/Toggle.svelte";
     import '../styles/Topbar.scss';
+    import '../styles/PathDisplay.scss';
 
-    let expander;
+    let data, dropdown;
 
-    let path = '', dropdown_visible = false;
-    let separator = `<span class="path-divider">/</span>`;
-    const links = [`<a class="path-link" href="/">home</a>`];
+    const path = [], temp = [];
+    const links = [{
+        "type": "pit",
+        "href": "/",
+        "src": "/icons/placeholder.svg",
+        "alt": "Home"
+    }];
 
     $page.url.pathname.split('/').filter((str) => str !== '').forEach(element => {
-        path += ('/' + element);
-        links.push(`<a class="path-link" href="${path}">${element}</a>`);
+        path.push(element);
+        data = {...findPage(path, pages)};
+        delete data.children;
+        data.type = "pit";
+        temp.push(data);
     });
+
+    if (temp.length <= 3) {
+        links.push(...temp);
+    }
+    else {
+        dropdown = {
+            "type": "pest",
+            "href": "javascript:void(0)",
+            "alt": "...",
+            "children": {}
+        };
+
+        temp.slice(0, -2).forEach((link) => {
+            dropdown.children[link.href.split('/').slice(-1)[0]] = link;
+        });
+
+        links.push(dropdown, temp.slice(-2)[0], temp.slice(-1)[0]);
+    }
+
+    $: if($navigating) {
+        path_toggled.set(false);
+    }
     
     function toggleSidebar() {
-        toggled.update((n) => !n);
+        sidebar_toggled.update((n) => !n);
     }
 
     function expandSidebarClick() {
-        expanded.update((n) => !n);
+        sidebar_expanded.update((n) => !n);
     }
 
     function expandSidebarKey(e) {
-        if (e.key == "Enter") { expanded.update((n) => !n); }
+        if (e.key == "Enter") { sidebar_expanded.update((n) => !n); }
     }
 
-    function toggleDropdownClick() {
-        dropdown_visible = !dropdown_visible;
-    }
-
-    function hideDropdownClick() {
-        dropdown_visible = false;
-    }
-
-    function toggleDropdownKey(e) {
-        if(e.key == "Enter") { dropdown_visible = !dropdown_visible; }
+    function closePathToggle() {
+        path_toggled.set(false);
     }
 </script>
 
-<ul class={"topbar" + ($expanded ? " expanded" : "")}>
+<ul class={"topbar" + ($sidebar_expanded ? " expanded" : "")}>
     <li
         class="topbar-item"
 
@@ -57,49 +78,45 @@
         on:keydown={expandSidebarKey}
     >
         <img
-            class={"topbar-link topbar-icon" + ($expanded ? " expanded" : "")}
-            src={$expanded || $toggled ? "/icons/expand_sidebar.svg" : "/icons/sidebar.svg"}
+            class={"topbar-link topbar-icon" + ($sidebar_expanded ? " expanded" : "")}
+            src={$sidebar_expanded || $sidebar_toggled ? "/icons/expand_sidebar.svg" : "/icons/sidebar.svg"}
             alt="Open sidebar"
-            bind:this={expander}
         />
     </li>
 
-    <li class="path">
-        {#if links.length <= 4}
-            {@html links.join(separator)}
-        {:else}
-            {@html links[0]}
-            {@html separator}
-            <span class="path-contraction" on:click={toggleDropdownClick} on:keydown={toggleDropdownKey} use:clickOutside on:click_outside={hideDropdownClick}>
-                <span class="path-link">
-                    ...
-                </span>
-                {#if dropdown_visible}
-                    <span class="path-tooltip" transition:fade>
-                        {@html links.slice(1, -2).join('')}
-                    </span>
+    <li class="topbar-item">
+        <ul class="path">
+            {#each links as link}
+                {#if link.type == "pest"}
+                    <li class="path-item" use:clickOutside on:click_outside={closePathToggle}>
+                        <Toggle {...link} />
+                    </li>
+                {:else}
+                    <li class="path-item">
+                        <Toggle {...link} />
+                    </li>
                 {/if}
-            </span>
-            {@html separator}
-            {@html links.slice(-2).join(separator)}
-        {/if}
+                
+                <span class="path-divider">/</span>
+            {/each}
+        </ul>
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="/" text="Apply now!" />
+        <NavLink type="ut" href="/" alt="Apply now!" />
     </li>
 
     <li class="topbar-divider"></li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="/about" src="/icons/placeholder.svg" alt="About Us" text={false} />
+        <NavLink type="ui" href="/about" src="/icons/placeholder.svg" alt="About Us" />
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="/help" src="/icons/placeholder.svg" alt="Help" text={false} />
+        <NavLink type="ui" href="/help" src="/icons/placeholder.svg" alt="Help" />
     </li>
 
     <li class="topbar-item">
-        <NavLink location="topbar" href="/report" src="/icons/placeholder.svg" alt="Report an Issue" text={false} />
+        <NavLink type="ui" href="/report" src="/icons/placeholder.svg" alt="Report an Issue" />
     </li>
 </ul>

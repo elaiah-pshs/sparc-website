@@ -1,0 +1,70 @@
+@use "vars";
+
+.path {
+    height: 3rem;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    transition: vars.$transition-medium;
+}
+
+.path-item {
+    position: relative;
+}
+
+.path-link {
+    height: 0.875rem;
+
+    border-radius: 2px;
+    padding: 0.25rem;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    transition: vars.$transition-medium;
+
+    &:hover {
+        color: vars.$text-highlight;
+        background-color: #FFF2;
+    }
+}
+
+.path-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.path-text {
+    display: block;
+
+    flex: 0 0 auto;
+
+    font-size: 0.875rem;
+    font-family: "Roboto Mono", "Courier New", monospace;
+    white-space: nowrap;
+}
+
+.path-divider {
+    padding: 0.25rem;
+    color: #FFF8;
+
+    &:last-child {
+        display: none;
+    }
+}
+
+.path-toggle {
+    position: absolute;
+    width: fit-content;
+
+    border-radius: 2px;
+
+    display: inline-block;
+    background-color: vars.$surface-primary;
+}

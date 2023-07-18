@@ -1,7 +1,8 @@
 <script>
-	import { toggled, expanded } from '../scripts/stores.js';
-    import { materials } from '../scripts/materials.js';
+	import { sidebar_toggled, sidebar_expanded } from '../scripts/stores.js';
+    import { pages } from '../scripts/pages.js';
     import NavLink from "$lib/NavLink.svelte";
+    import Toggle from "$lib/Toggle.svelte";
     import '../styles/Sidebar.scss';
 
     let dropdowns;    
@@ -15,28 +16,28 @@
     }
 </script>
 
-<aside class={"sidebar" + ($expanded ? " expanded" : "") + ($toggled && !$expanded ? " toggled" : "")}>
+<aside class={"sidebar" + ($sidebar_expanded ? " expanded" : "") + ($sidebar_toggled && !$sidebar_expanded ? " toggled" : "")}>
     <div class="sidebar-header">
-        <NavLink location="sidebar-header" href="/" src="/icons/placeholder.svg" alt="SPARC 2028" text />
+        <NavLink type="hit" href="/" src="/icons/placeholder.svg" alt="SPARC 2028" />
     </div>
 
     <ul class="sidebar-links">
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="/announcements" src="/icons/placeholder.svg" alt="Announcements" text />
+            <NavLink type="lit" href="/announcements" src="/icons/placeholder.svg" alt="Announcements" />
         </li>
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="/progress" src="/icons/placeholder.svg" alt="Progress Tracker" text />
+            <NavLink type="lit" href="/progress" src="/icons/placeholder.svg" alt="Progress Tracker" />
         </li>
         <li class="sidebar-item">
-            <NavLink location="sidebar" href="/materials" src="/icons/placeholder.svg" alt="All Materials" text />
+            <NavLink type="lit" href="/materials" src="/icons/placeholder.svg" alt="All Materials" />
         </li>        
     </ul>
 
     <nav class="sidebar-nav" bind:this={dropdowns} on:scroll={handleScroll}>
-        <ul class="sidebar-dropdowns">
-            {#each Object.entries(materials) as [key, value], index (key)}
-                <li class="sidebar-dropdown">
-                    <NavLink location="sidebar" text toggle open {...value}/>
+        <ul class="dropdowns">
+            {#each Object.entries(pages.materials.children) as [key, value], index (key)}
+                <li class="dropdown">
+                    <Toggle type="lait" {...value} />
                 </li>
             {/each}
         </ul>
