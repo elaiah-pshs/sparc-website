@@ -15,6 +15,8 @@
     // a - toggle link expands with a click on an arrow icon
     // e - toggle link expands with a click on the element itself
 
+    // s - toggle disappears when something outside it is clicked (soft toggle)
+
     // i - link has icon
     // t - link has text
 

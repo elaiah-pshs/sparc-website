@@ -78,7 +78,6 @@
 {/if}
 
 {#if has_children && ((open && type.indexOf('e') == -1) || (type.indexOf('e') != -1 && $path_toggled))}
-    <!-- style={(type.indexOf('p') == -1 && JSON.stringify(value.children) != "{}") ? `padding-left: ${indent}rem` : ""} -->
     <div class={location + "-toggle"} transition:fade>
         {#each Object.entries(children) as [key, value], index (key)}
             <svelte:self type={type} open={false} {...value} />
