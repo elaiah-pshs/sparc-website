@@ -6,6 +6,8 @@
     let display = "";
 
     onMount(() => {
+        display = "";
+
         fetch(data.material.href + "/content.html")
             .then((res) => res.text())
             .then((text) => {
@@ -15,6 +17,8 @@
     });
 
     $: if($navigating) {
+        display = "";
+        
         fetch(data.material.href + "/content.html")
             .then((res) => res.text())
             .then((text) => {
