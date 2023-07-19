@@ -15,4 +15,4 @@
 <div class="wrapper">
 	<div class={"ghost" + ($sidebar_expanded ? " expanded" : "")}></div>
 	<slot />
-</div>	
+</div>
