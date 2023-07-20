@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
     import { navigating } from '$app/stores';
 
-    let display = "";
+    let display = "", navigate_count = 0;
 
     onMount(() => {
         display = "";
@@ -14,17 +14,24 @@
                 display = text;
             })
             .catch((err) => console.error(err));
+        
+        console.log("mounted");
     });
 
     $: if($navigating) {
         display = "";
+        navigate_count = (navigate_count + 1) % 2;
         
-        fetch(data.material.href + "/content.html")
-            .then((res) => res.text())
-            .then((text) => {
-                display = text;
-            })
-            .catch((err) => console.error(err));
+        if (navigate_count) {
+            fetch(data.material.href + "/content.html")
+                .then((res) => res.text())
+                .then((text) => {
+                    display = text;
+                })
+                .catch((err) => console.error(err));
+        
+            console.log("navigating");
+        }
     }
 </script>
 
