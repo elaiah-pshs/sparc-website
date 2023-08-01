@@ -60,6 +60,7 @@ export const pages = {
 								"alt": "Introduction to Matrices",
 							}
 						}
+			    		}
 				}
                             },
                             "eng": {
