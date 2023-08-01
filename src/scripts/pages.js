@@ -48,19 +48,19 @@ export const pages = {
                                 "href": "/materials/reviewers/q1/math",
                                 "src": "/icons/placeholder.svg",
                                 "alt": "Mathematics"
-								"children": {
-								    "matrices": {
-								     "href": "/materials/reviewers/q1/math/matrices",
-								     "src": "/icons/placeholder.svg",
-								     "alt": "Matrices",
-									 "children": {
-										 "matrices_intro": {
-											 "href": "/materials/reviewers/q1/math/matrices/matrices_intro",
-											 "src": "/icons/placeholder.svg",
-											 "alt": "Introduction to Matrices",
-										 }
-									 }
-								}
+				"children": {
+					"matrices": {
+						"href": "/materials/reviewers/q1/math/matrices",
+						"src": "/icons/placeholder.svg",
+						"alt": "Matrices",
+						"children": {
+							"matrices_intro": {
+								"href": "/materials/reviewers/q1/math/matrices/matrices_intro",
+								"src": "/icons/placeholder.svg",
+								"alt": "Introduction to Matrices",
+							}
+						}
+				}
                             },
                             "eng": {
                                 "href": "/materials/reviewers/q1/eng",
