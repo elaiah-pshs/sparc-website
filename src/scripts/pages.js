@@ -258,7 +258,14 @@ export const pages = {
                             "math": {
                                 "href": "/materials/practices/q1/math",
                                 "src": "/icons/placeholder.svg",
-                                "alt": "Mathematics"
+                                "alt": "Mathematics",
+				"children": {
+				    "letv": {
+				    	"href": "/materials/practices/q1/math/letv",
+				    	"src": "icons/placeholder.svg",
+				    	"alt": "Linear Equations in Two Variables (Practice Test)"
+				    }
+				}
                             },
                             "eng": {
                                 "href": "/materials/practices/q1/eng",
