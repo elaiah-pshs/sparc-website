@@ -262,7 +262,7 @@ export const pages = {
 				"children": {
 				    "letv": {
 				    	"href": "/materials/practices/q1/math/letv",
-				    	"src": "icons/placeholder.svg",
+				    	"src": "/icons/placeholder.svg",
 				    	"alt": "Linear Equations in Two Variables (Practice Test)"
 				    }
 				}
