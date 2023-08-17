@@ -62,6 +62,18 @@ export const pages = {
                                             }
                                         }
                                     }
+				    "letv": {
+                                        "href": "/materials/reviewers/q1/math/letv",
+                                        "src": "/icons/placeholder.svg",
+                                        "alt": "Linear Equations in Two Variables",
+                                        "children": {
+                                            "cartesian_summary": {
+                                                "href": "/materials/reviewers/q1/math/letv/cartesian_summary",
+                                                "src": "/icons/placeholder.svg",
+                                                "alt": "Summary: Cartesian Coordinate System and Lines",
+                                            }
+                                        }
+                                    }
                                 }
                             },
                             "eng": {
