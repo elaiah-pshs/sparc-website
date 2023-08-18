@@ -60,6 +60,11 @@ export const pages = {
                                                 "src": "/icons/placeholder.svg",
                                                 "alt": "Introduction to Matrices",
                                             }
+					    "matrices_ops": {
+                                                "href": "/materials/reviewers/q1/math/matrices/matrices_ops",
+                                                "src": "/icons/placeholder.svg",
+                                                "alt": "Matrix Operations",
+                                            }
                                         }
                                     }
 				    "letv": {
