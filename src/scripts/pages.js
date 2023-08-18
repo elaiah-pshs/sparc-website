@@ -66,7 +66,7 @@ export const pages = {
                                                 "alt": "Matrix Operations",
                                             }
                                         }
-                                    }
+                                    },
 				    "letv": {
                                         "href": "/materials/reviewers/q1/math/letv",
                                         "src": "/icons/placeholder.svg",
