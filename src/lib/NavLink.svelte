@@ -26,11 +26,6 @@
 	export let alt = "";
 
     let location = {"u": "topbar", "l": "sidebar", "p": "path", "h": "sidebar-header"}[type[0]];
-
-    function toggleOpenClick() {
-		open = !open;
-        console.log("clicked");
-	}
 </script>
 
 

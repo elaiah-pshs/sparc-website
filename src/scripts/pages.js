@@ -24,6 +24,16 @@ export const pages = {
         "src": "/icons/placeholder.svg",
         "alt": "Report",
     },
+    "announcements": {
+        "href": "/announcements",
+        "src": "/icons/placeholder.svg",
+        "alt": "Announcements",
+    },
+    "progress": {
+        "href": "/progress",
+        "src": "/icons/placeholder.svg",
+        "alt": "Progress Tracker",
+    },
     "materials": {
         "href": "/materials",
         "src": "/icons/placeholder.svg",

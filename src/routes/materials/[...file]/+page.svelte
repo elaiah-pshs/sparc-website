@@ -14,8 +14,6 @@
                 display = text;
             })
             .catch((err) => console.error(err));
-        
-        console.log("mounted");
     });
 
     $: if($navigating) {
@@ -29,8 +27,6 @@
                     display = text;
                 })
                 .catch((err) => console.error(err));
-        
-            console.log("navigating");
         }
     }
 </script>
