@@ -120,3 +120,5 @@
         <NavLink type="ui" href="/report" src="/icons/placeholder.svg" alt="Report an Issue" />
     </li>
 </ul>
+
+<div class={"topbar-bg" + ($sidebar_expanded ? " expanded" : "")}></div>

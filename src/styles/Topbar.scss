@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
 
+    background:linear-gradient(left, #000, #000) no-repeat 50px 50px;
+
     display: flex;
     align-items: center;
 
@@ -64,4 +66,27 @@
     height: 1.5rem;
     margin: 0.75rem;
     background-color: #FFF4;
+}
+
+.topbar-bg {
+    position: fixed;
+    right: 0;
+    z-index: 9;
+
+    width: 100%;
+    height: 3rem;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: vars.$bg-primary;
+
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    &.expanded {
+        width: calc(100% - 16rem);
+    }
 }
