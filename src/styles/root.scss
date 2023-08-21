@@ -50,6 +50,7 @@ body {
 }
 
 main {
+    height: auto;
     padding: 4rem 3rem 1rem 3rem;
     flex: 1;
 }
@@ -71,8 +72,4 @@ a {
         color: vars.$text-highlight;
         text-decoration: none;
     }
-}
-
-.katex-html {
-    display: none;
 }
