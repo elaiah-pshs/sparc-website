@@ -78,7 +78,7 @@
 {/if}
 
 {#if has_children && ((open && type.indexOf('e') == -1) || (type.indexOf('e') != -1 && $path_toggled))}
-    <div class={location + "-toggle"} transition:fade>
+    <div class={location + "-toggle"} transition:fade|global>
         {#each Object.entries(children) as [key, value], index (key)}
             <svelte:self type={type} open={false} {...value} />
         {/each}
